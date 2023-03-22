@@ -1,7 +1,7 @@
 import React, { isValidElement } from "react";
 import { useState } from "react";
 import "./Home.css";
-import { FaMoon, FaSpaceShuttle, IconName } from "react-icons/fa";
+import { FaMoon, FaSpaceShuttle, FaStar, IconName } from "react-icons/fa";
 import "./ListPlanets.jsx";
 // import ListPlanets from "./ListPlanets.jsx";
 
@@ -38,15 +38,15 @@ export default function Home() {
   if (ActivePlanet == "")
     return (
       <div className="Home">
-        <h1> <FaSpaceShuttle />    ADVENTURES WITH SPACE INVADERS <FaMoon />  </h1>
+        <h1> <FaStar /> ADVENTURES WITH SPACE INVADERS <FaStar />  </h1>
         <h2>Pick a Planet to Travel</h2>
         {/* <h2>{planetName}</h2> */}
         {/* <p>{description}</p> */}
         {/* <button onClick={(planet) => {}}>Click to View Planets</button> */}
 
-        <button onClick={() => setActivePlanet("Earth")}>Earth</button>
-        <button onClick={() => setActivePlanet("Mars")}>Mars</button>
-        <button onClick={() => setActivePlanet("Jupiter")}>Jupiter</button>
+        <button onClick={() => setActivePlanet("Earth")}>Earth <FaSpaceShuttle />  </button>
+        <button onClick={() => setActivePlanet("Mars")}>Mars <FaSpaceShuttle /></button>
+        <button onClick={() => setActivePlanet("Jupiter")}>Jupiter <FaSpaceShuttle />  </button>
 
         <div>
           <ul>
