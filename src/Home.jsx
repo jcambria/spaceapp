@@ -37,11 +37,12 @@ export default function Home() {
   const [PlanetFacts, setPlanetFacts] = useState("");
 
 
-  if (ActivePlanet == "" && PlanetFacts == "")
+  if (ActivePlanet == "")
     return (
       <div className="Home">
         <h1> <FaStar /> ADVENTURES WITH SPACE INVADERS <FaStar />  </h1>
         <h2>Which planet do you want to explore?</h2>
+        
         
         <button onClick={() => setActivePlanet("Earth")} >Earth <FaSpaceShuttle />  </button>
         <button onClick={() => setActivePlanet("Mars")}>Mars <FaSpaceShuttle /></button>
@@ -49,6 +50,7 @@ export default function Home() {
 
         <div>
           <ul>
+        
             {/* {Planets.map((planet) => (
               <ListPlanets singlePlanet={planet} /> */}
             {/* ))} */}
@@ -64,8 +66,8 @@ export default function Home() {
         <h1>{ActivePlanet}</h1>
         <p>{PlanetFacts}</p>
 
-        <button onClick={() => setPlanetFacts("")}>View Photo</button>
-        <button onClick={() => setPlanetFacts("")}>See more</button>
+        <button onClick={() => setPlanetFacts("Here is the photo of the planet")}>View Photo</button>
+        <button onClick={() => setPlanetFacts("Here is some imformation")}>See more</button>
         <button onClick={() => setActivePlanet("")}>Go back</button>
       </div>
     );

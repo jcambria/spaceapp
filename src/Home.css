@@ -28,12 +28,16 @@ button{
     cursor: url(icons8-spaceman-64.png), auto; 
     border-radius: 25px; 
     font-weight: bolder;
+   
     
 }
 
 button:hover{
     background-color: #18122B;
-    box-shadow: 0 0 2px 
+    box-shadow: 0 0 2px purple,
+    0 4 4px darkmagenta,
+    0 6 12px white;
+    
 }
 
 
