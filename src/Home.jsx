@@ -39,7 +39,8 @@ export default function Home() {
   const [ShowImg, setShowImg] = useState(true);
   const [fact, setFact] = useState('The Earth is the only planet in our solar system not named after a god.');
   const [MarsFact, setMarsFact] = useState('Mars is the fourth planet from the sun and the second smallest planet in the solar system.');
-  
+  const [JupFact, setJupFact] = useState('Jupiter is the largest planet in our solar system, more than twice the size of all the other planets combined.');
+
 
   const earthFacts = [
     'About 70% of the Earth’s surface is covered in water.',
@@ -70,6 +71,20 @@ export default function Home() {
 
 
 
+  const jupiterFacts = [
+    'Jupiter has the shortest day of any planet in our solar system, with one day on Jupiter lasting only about 10 hours.',
+    'Jupiter has at least 79 moons, with the four largest known as Io, Europa, Ganymede, and Callisto.',
+    'Jupiter has a very strong magnetic field that is 14 times stronger than Earth’s.',
+    'Jupiter has a giant red spot on its surface, which is a massive storm that has been raging for more than 350 years.',
+    'Jupiter’s atmosphere is mostly made up of hydrogen and helium gas.',
+    'Jupiter emits more heat than it receives from the sun, which suggests it has an internal heat source.',
+    'Jupiter’s rings are made up of dust particles and small rocks.',
+    'Jupiter has the strongest gravitational pull of any planet in our solar system.',
+    'Jupiter is visible to the naked eye and can often be seen in the night sky.',
+  ];
+
+
+
 
 
   function handleClickMars() {
@@ -85,7 +100,12 @@ export default function Home() {
     setFact(randomFact)
     
   }
-  
+
+  function handleClickJup() {
+    const randomJupFact = jupiterFacts[Math.floor(Math.random() * jupiterFacts.length)];
+    setJupFact(randomJupFact);
+  }
+
 
   function lightSwitch(){
     if(ShowImg === false){
@@ -159,11 +179,14 @@ export default function Home() {
     if(ActivePlanet === ("Jupiter") ){
         
         return(
+
             <div>
-                <p>
-                   FUN FACT: Jupiter? Who knows...
-                </p>
-            </div>
+            <p>
+                {JupFact}
+             </p>
+             <button onClick={handleClickJup}>Fun Fact About Jupiter</button>
+        </div>
+            
         )
     }
   }
@@ -182,7 +205,7 @@ export default function Home() {
         <button onClick={() => setActivePlanet("Mars")}>Mars <FaSpaceShuttle /></button>
         <button onClick={() => setActivePlanet("Jupiter")}>Jupiter <FaSpaceShuttle />  </button>
 
-        <img src="https://img.freepik.com/free-vector/paper-style-galaxy-background_23-2148985024.jpg" alt="" />
+        <img src="https://img.freepik.com/free-vector/paper-style-galaxy-background_23-2148985024.jpg" alt="" id="space" />
 
         <div className="Contact" >
             <h1>
@@ -207,12 +230,9 @@ export default function Home() {
         <p>{displayEarthImg()}
             {displayMarsImg()} 
             {displayJupiterImg()}</p>
-            {marsFunFact()} {earthFunFact()}
-            <p>
-    
-            </p>
 
-    
+            {marsFunFact()} {earthFunFact()} {jupiterFunFact()}
+            
         <button onClick={() => {lightSwitch()}}>View Photo</button>
 
         <button onClick={() => setShowImg (false)}>Hide Photo</button>
