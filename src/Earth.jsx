@@ -1,11 +1,11 @@
-import React from "react";
+// import React from "react";
 
 
-export default function Earth(){
-    return (
-        <li key={} >
+// export default function Earth(){
+//     return (
+//         <li key={} >
 
-        </li>
+//         </li>
 
-    )
-}
+//     )
+// }

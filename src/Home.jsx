@@ -134,7 +134,7 @@ export default function Home() {
             <p>
                 {fact}
              </p>
-             <button onClick={handleClick}>Earth Fun Fact</button>
+             <button onClick={handleClick}>Fun Fact About Earth</button>
         </div>
         )
     }
@@ -149,7 +149,7 @@ export default function Home() {
                 <p>
                     {MarsFact}
                  </p>
-                 <button onClick={handleClickMars}>Mars Fun Fact</button>
+                 <button onClick={handleClickMars}>Fun Fact About Mars</button>
             </div>
         )
     }
@@ -198,18 +198,6 @@ export default function Home() {
 
         </div>
 
-        <div>
-          <ul>
-            {/* {Planets.map((planet) => (
-              <ListPlanet singlePlanet={planet} /> */}
-            {/* ))} */}
-            {/* {Planets.map((planet) => (
-              <ListPlanet singlePlanet={planet} /> */}
-            {/* ))} */}
-          </ul>
-
-          <ul></ul>
-        </div>
       </div>
     );
   else
@@ -221,13 +209,10 @@ export default function Home() {
             {displayJupiterImg()}</p>
             {marsFunFact()} {earthFunFact()}
             <p>
-        
-            {/* {fact}{MarsFact} */}
+    
             </p>
 
-        
-      
-
+    
         <button onClick={() => {lightSwitch()}}>View Photo</button>
 
         <button onClick={() => setShowImg (false)}>Hide Photo</button>
