@@ -39,7 +39,7 @@ export default function Home() {
     return (
       <div className="Home">
         <h1> <FaStar /> ADVENTURES WITH SPACE INVADERS <FaStar />  </h1>
-        <h2>Pick a Planet to Travel</h2>
+        <h2>Which planet do you want to explore?</h2>
         {/* <h2>{planetName}</h2> */}
         {/* <p>{description}</p> */}
         {/* <button onClick={(planet) => {}}>Click to View Planets</button> */}
