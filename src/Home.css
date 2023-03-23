@@ -1,4 +1,6 @@
 *{
+    max-width: 100%;
+    max-height: 100%;
     overflow: scroll;
     box-sizing: border-box;
     scroll-behavior: smooth;
@@ -80,7 +82,7 @@ button{
 }
 
 button:hover{
-    border-radius: 100%;
+    /* border-radius: 100%; */
     background-color: #18122B;
     box-shadow: 0 0 2px purple,
     0 4 4px darkmagenta,
