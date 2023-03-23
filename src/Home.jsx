@@ -36,7 +36,7 @@ export default function Home() {
 
   const [ActivePlanet, setActivePlanet] = useState("");
   const [PlanetFacts, setPlanetFacts] = useState("");
-  const [ShowImg, setShowImg] = useState(false);
+  const [ShowImg, setShowImg] = useState(true);
 
   function lightSwitch(){
     if(ShowImg === false){
@@ -45,17 +45,78 @@ export default function Home() {
     }
   }
 
-  function displayEarthImg(){
-    if(ShowImg === true){
+
+  function displayMarsImg(){
+    if(ShowImg === true && ActivePlanet === ('Mars')){
         return(
             <div>
-                <img src="https://cdn.pixabay.com/photo/2011/12/13/14/31/earth-11015__340.jpg" alt="earthimg" />
+                <img src="https://media.hswstatic.com/eyJidWNrZXQiOiJjb250ZW50Lmhzd3N0YXRpYy5jb20iLCJrZXkiOiJnaWZcL21hcnMtYTEuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoyOTB9fX0=" alt="" />
+                <p></p>
             </div>
         )
     }
   }
 
-  
+  function displayEarthImg(){
+    if(ShowImg === true && ActivePlanet === ('Earth')){
+        return(
+            <div>
+                <img src="https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80" alt="" />
+            </div>
+        )
+    }
+  }
+
+  function displayJupiterImg(){
+    if(ShowImg === true && ActivePlanet === ('Jupiter')){
+        return(
+            <div>
+                <img src="https://cdn.britannica.com/84/4284-050-16C7E8C2/Photograph-Jupiter-range-Voyager-1-cloud-bands-February-1-1979.jpg" alt="" />
+            </div>
+        )
+    }
+  }
+
+  function earthFunFact(){
+    if(ActivePlanet === ("Earth") ){
+        
+        return(
+            <div>
+                <p>
+                    FUN FACT: Earth is 70% water
+                </p>
+            </div>
+        )
+    }
+  }
+
+  function marsFunFact(){
+    if(ActivePlanet === ("Mars") ){
+        
+        return(
+            <div>
+                <p>
+                    FUN FACT: Mars is cool I guess? Potiental colony?
+                </p>
+            </div>
+        )
+    }
+  }
+
+  function jupiterFunFact(){
+    if(ActivePlanet === ("Jupiter") ){
+        
+        return(
+            <div>
+                <p>
+                   FUN FACT: Jupiter? Who knows...
+                </p>
+            </div>
+        )
+    }
+  }
+
+
   
 
 
@@ -103,14 +164,22 @@ export default function Home() {
     return (
       <div>
         <h1>{ActivePlanet}</h1>
-        <p>{displayEarthImg()}</p>
-        <p>{PlanetFacts}</p>
+        <p>{displayEarthImg()}
+            {displayMarsImg()} 
+            {displayJupiterImg()}</p>
+
+            {earthFunFact()} {marsFunFact()} {jupiterFunFact()}
 
         <button onClick={() => {lightSwitch()}}>View Photo</button>
-        {/* <button onClick={() => setPlanetFacts("Here is the photo of the planet")}>View Photo</button> */}
-        <button onClick={() => {
-             setPlanetFacts ("Here is some imformation") 
-             setShowImg (false) }}>See more</button>
+
+        <button onClick={() => setShowImg (false)}>Hide Photo</button>
+
+        {/* <button onClick={() => {earthFunFact()}}>Fun Fact</button> */}
+
+        
+
+        {/* <button onClick={() => {setPlanetFacts ("Here is some imformation")}}>See more</button> */}
+
         <button onClick={() => setActivePlanet("")}>Go back</button>
       </div>
 
