@@ -35,6 +35,7 @@ export default function Home() {
 
   const [ActivePlanet, setActivePlanet] = useState("");
   const [PlanetFacts, setPlanetFacts] = useState("");
+  
 
 
   if (ActivePlanet == "")
@@ -47,6 +48,8 @@ export default function Home() {
         <button onClick={() => setActivePlanet("Earth")} >Earth <FaSpaceShuttle />  </button>
         <button onClick={() => setActivePlanet("Mars")}>Mars <FaSpaceShuttle /></button>
         <button onClick={() => setActivePlanet("Jupiter")}>Jupiter <FaSpaceShuttle />  </button>
+
+        <img src="https://img.freepik.com/free-vector/paper-style-galaxy-background_23-2148985024.jpg" alt="" />
 
         <div>
           <ul>
@@ -65,6 +68,7 @@ export default function Home() {
       <div>
         <h1>{ActivePlanet}</h1>
         <p>{PlanetFacts}</p>
+        <img src="" alt="" />
 
         <button onClick={() => setPlanetFacts("Here is the photo of the planet")}>View Photo</button>
         <button onClick={() => setPlanetFacts("Here is some imformation")}>See more</button>

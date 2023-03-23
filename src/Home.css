@@ -12,6 +12,24 @@ body{
     
 }
 
+img{
+
+    margin: auto;
+    display: block;
+    width: 450px;
+    /* height: 300px; */
+    display: flex;
+    justify-content: center;
+    padding-top: 150px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+
+
+}
+
 button{
     position: relative;
     background-color: #393053; 
