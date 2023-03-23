@@ -34,17 +34,16 @@ export default function Home() {
   ]);
 
   const [ActivePlanet, setActivePlanet] = useState("");
+  const [PlanetFacts, setPlanetFacts] = useState("");
 
-  if (ActivePlanet == "")
+
+  if (ActivePlanet == "" && PlanetFacts == "")
     return (
       <div className="Home">
         <h1> <FaStar /> ADVENTURES WITH SPACE INVADERS <FaStar />  </h1>
         <h2>Which planet do you want to explore?</h2>
-        {/* <h2>{planetName}</h2> */}
-        {/* <p>{description}</p> */}
-        {/* <button onClick={(planet) => {}}>Click to View Planets</button> */}
-
-        <button onClick={() => setActivePlanet("Earth")}>Earth <FaSpaceShuttle />  </button>
+        
+        <button onClick={() => setActivePlanet("Earth")} >Earth <FaSpaceShuttle />  </button>
         <button onClick={() => setActivePlanet("Mars")}>Mars <FaSpaceShuttle /></button>
         <button onClick={() => setActivePlanet("Jupiter")}>Jupiter <FaSpaceShuttle />  </button>
 
@@ -63,7 +62,10 @@ export default function Home() {
     return (
       <div>
         <h1>{ActivePlanet}</h1>
+        <p>{PlanetFacts}</p>
 
+        <button onClick={() => setPlanetFacts("")}>View Photo</button>
+        <button onClick={() => setPlanetFacts("")}>See more</button>
         <button onClick={() => setActivePlanet("")}>Go back</button>
       </div>
     );
