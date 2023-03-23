@@ -37,15 +37,55 @@ export default function Home() {
   const [ActivePlanet, setActivePlanet] = useState("");
   const [PlanetFacts, setPlanetFacts] = useState("");
   const [ShowImg, setShowImg] = useState(true);
+  const [fact, setFact] = useState('The Earth is the only planet in our solar system not named after a god.');
+  const [MarsFact, setMarsFact] = useState('Mars is the fourth planet from the sun and the second smallest planet in the solar system.');
+  
+
+  const earthFacts = [
+    'About 70% of the Earth’s surface is covered in water.',
+    'The Earth’s atmosphere is composed of roughly 78% nitrogen, 21% oxygen, and 1% other gases.',
+    'The Earth is approximately 4.54 billion years old.',
+    'The Earth has a magnetic field that protects us from harmful solar winds and cosmic radiation.',
+    'The Earth’s rotation is gradually slowing down.',
+    'The highest point on Earth is Mount Everest, which stands at 29,029 feet (8,848 meters).',
+    'The Earth’s deepest point is the Challenger Deep in the Mariana Trench, which is approximately 36,070 feet (10,994 meters) deep.',
+    'The Earth orbits the sun at an average distance of 93 million miles (149.6 million kilometers).',
+    'The Earth’s orbit is not a perfect circle, but is instead an elliptical shape.',
+  ]
+
+
+
+  const marsFacts = [
+    'Mars is the fourth planet from the sun and the second smallest planet in the solar system.',
+    'Mars is often referred to as the "Red Planet" due to its reddish appearance caused by iron oxide (rust) on its surface.',
+    'Mars has the largest volcano in the solar system, Olympus Mons, which is three times taller than Mount Everest.',
+    'Mars has a very thin atmosphere, composed mainly of carbon dioxide.',
+    'Mars has two small moons, Phobos and Deimos.',
+    'Mars experiences massive dust storms that can cover the entire planet for months at a time.',
+    'Mars has the largest canyon in the solar system, Valles Marineris, which is about 4,000 km long.',
+    'Mars has the potential to support life as evidence of water has been found on its surface.',
+    'Mars has a day that is almost the same length as Earth’s, at 24 hours and 39 minutes.',
+    'Mars has polar ice caps that are made of frozen carbon dioxide and water.',
+  ];
 
 
 
 
-  function changeFunFacts(){
-    
-    setPlanetFacts("hey")
 
+  function handleClickMars() {
+    const randomMarsFact = marsFacts[Math.floor(Math.random() * marsFacts.length)];
+    setMarsFact(randomMarsFact);
   }
+
+
+
+
+  function handleClick() {
+    const randomFact = earthFacts[Math.floor(Math.random() * earthFacts.length)];
+    setFact(randomFact)
+    
+  }
+  
 
   function lightSwitch(){
     if(ShowImg === false){
@@ -53,7 +93,7 @@ export default function Home() {
         
     }
   }
-
+  
 
   function displayMarsImg(){
     if(ShowImg === true && ActivePlanet === ('Mars')){
@@ -91,10 +131,11 @@ export default function Home() {
         
         return(
             <div>
-                <p>
-                    FUN FACT: Earth is 70% water
-                </p>
-            </div>
+            <p>
+                {fact}
+             </p>
+             <button onClick={handleClick}>Earth Fun Fact</button>
+        </div>
         )
     }
   }
@@ -103,10 +144,12 @@ export default function Home() {
     if(ActivePlanet === ("Mars") ){
         
         return(
+            
             <div>
                 <p>
-                    FUN FACT: Mars is cool I guess? Potiental colony?
-                </p>
+                    {MarsFact}
+                 </p>
+                 <button onClick={handleClickMars}>Mars Fun Fact</button>
             </div>
         )
     }
@@ -176,21 +219,19 @@ export default function Home() {
         <p>{displayEarthImg()}
             {displayMarsImg()} 
             {displayJupiterImg()}</p>
+            {marsFunFact()} {earthFunFact()}
             <p>
-            {earthFunFact()} {marsFunFact()} {jupiterFunFact()}
+        
+            {/* {fact}{MarsFact} */}
             </p>
 
-            {/* {earthFunFact()} {marsFunFact()} {jupiterFunFact()} */}
+        
+      
 
         <button onClick={() => {lightSwitch()}}>View Photo</button>
 
         <button onClick={() => setShowImg (false)}>Hide Photo</button>
 
-        <button onClick={() => {changeFunFacts()}}>Fun Fact</button>
-
-        
-
-        {/* <button onClick={() => {setPlanetFacts ("Here is some imformation")}}>See more</button> */}
 
         <button onClick={() => setActivePlanet("")}>Go back</button>
       </div>
