@@ -44,7 +44,6 @@ export default function Home() {
         <h1> <FaStar /> ADVENTURES WITH SPACE INVADERS <FaStar />  </h1>
         <h2>Which planet do you want to explore?</h2>
         
-        
         <button onClick={() => setActivePlanet("Earth")} >Earth <FaSpaceShuttle />  </button>
         <button onClick={() => setActivePlanet("Mars")}>Mars <FaSpaceShuttle /></button>
         <button onClick={() => setActivePlanet("Jupiter")}>Jupiter <FaSpaceShuttle />  </button>
@@ -53,7 +52,6 @@ export default function Home() {
 
         <div>
           <ul>
-        
             {/* {Planets.map((planet) => (
               <ListPlanets singlePlanet={planet} /> */}
             {/* ))} */}
