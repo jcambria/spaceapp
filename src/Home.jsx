@@ -38,6 +38,15 @@ export default function Home() {
   const [PlanetFacts, setPlanetFacts] = useState("");
   const [ShowImg, setShowImg] = useState(true);
 
+
+
+
+  function changeFunFacts(){
+    
+    setPlanetFacts("hey")
+
+  }
+
   function lightSwitch(){
     if(ShowImg === false){
         setShowImg(true)
@@ -167,14 +176,17 @@ export default function Home() {
         <p>{displayEarthImg()}
             {displayMarsImg()} 
             {displayJupiterImg()}</p>
-
+            <p>
             {earthFunFact()} {marsFunFact()} {jupiterFunFact()}
+            </p>
+
+            {/* {earthFunFact()} {marsFunFact()} {jupiterFunFact()} */}
 
         <button onClick={() => {lightSwitch()}}>View Photo</button>
 
         <button onClick={() => setShowImg (false)}>Hide Photo</button>
 
-        {/* <button onClick={() => {earthFunFact()}}>Fun Fact</button> */}
+        <button onClick={() => {changeFunFacts()}}>Fun Fact</button>
 
         
 
