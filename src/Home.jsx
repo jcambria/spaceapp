@@ -1,8 +1,9 @@
 import React, { isValidElement } from "react";
 import { useState } from "react";
 import "./Home.css";
-import { FaMoon, FaSpaceShuttle, FaStar, IconName } from "react-icons/fa";
-import "./ListPlanets.jsx";
+import { FaEnvelopeSquare, FaGithub, FaLinkedin, FaMoon, FaPhone, FaPhoneAlt, FaSearch, FaSpaceShuttle, FaStar, FaVoicemail, IconName } from "react-icons/fa";
+import "./ListPlanet.jsx";
+import ListPlanet from "./ListPlanet.jsx";
 // import ListPlanets from "./ListPlanets.jsx";
 
 export default function Home() {
@@ -10,7 +11,7 @@ export default function Home() {
     {
       name: "Earth",
       funfact: "Did you know earth is 70% water?",
-      img: "url",
+      img: "https://cdn.pixabay.com/photo/2011/12/13/14/31/earth-11015__340.jpg",
       id: "0",
     },
     {
@@ -35,6 +36,26 @@ export default function Home() {
 
   const [ActivePlanet, setActivePlanet] = useState("");
   const [PlanetFacts, setPlanetFacts] = useState("");
+  const [ShowImg, setShowImg] = useState(false);
+
+  function lightSwitch(){
+    if(ShowImg === false){
+        setShowImg(true)
+        
+    }
+  }
+
+  function displayEarthImg(){
+    if(ShowImg === true){
+        return(
+            <div>
+                <img src="https://cdn.pixabay.com/photo/2011/12/13/14/31/earth-11015__340.jpg" alt="earthimg" />
+            </div>
+        )
+    }
+  }
+
+  
   
 
 
@@ -50,10 +71,27 @@ export default function Home() {
 
         <img src="https://img.freepik.com/free-vector/paper-style-galaxy-background_23-2148985024.jpg" alt="" />
 
+        <div className="Contact" >
+            <h1>
+                CONTACT 
+            </h1>
+            <p>
+                <a href="https://www.linkedin.com/in/justin-cambria/">LINKEDIN <FaLinkedin /> </a>
+            </p>
+            <p>
+            <a href="mailto: jrcambria92@gmail.com">EMAIL<FaEnvelopeSquare/> </a>
+            </p>
+            <a href="">CALL<FaPhoneAlt/> </a>
+
+        </div>
+
         <div>
           <ul>
             {/* {Planets.map((planet) => (
-              <ListPlanets singlePlanet={planet} /> */}
+              <ListPlanet singlePlanet={planet} /> */}
+            {/* ))} */}
+            {/* {Planets.map((planet) => (
+              <ListPlanet singlePlanet={planet} /> */}
             {/* ))} */}
           </ul>
 
@@ -65,12 +103,16 @@ export default function Home() {
     return (
       <div>
         <h1>{ActivePlanet}</h1>
+        <p>{displayEarthImg()}</p>
         <p>{PlanetFacts}</p>
-        <img src="" alt="" />
 
-        <button onClick={() => setPlanetFacts("Here is the photo of the planet")}>View Photo</button>
-        <button onClick={() => setPlanetFacts("Here is some imformation")}>See more</button>
+        <button onClick={() => {lightSwitch()}}>View Photo</button>
+        {/* <button onClick={() => setPlanetFacts("Here is the photo of the planet")}>View Photo</button> */}
+        <button onClick={() => {
+             setPlanetFacts ("Here is some imformation") 
+             setShowImg (false) }}>See more</button>
         <button onClick={() => setActivePlanet("")}>Go back</button>
       </div>
+
     );
 }

@@ -1,6 +1,17 @@
+*{
+    overflow: scroll;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+
+}
+
+
+
 body{
     background-color: #443C68;
     cursor: url(icons8-spaceman-64.png), auto;
+    scroll-behavior: smooth;
+    
     
 }
 
@@ -10,6 +21,14 @@ body{
     justify-content: center;
     cursor: url(icons8-spaceman-64.png), auto;
     
+}
+
+a{
+    font-size: 20px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: bolder;
+    color: white;
+    text-decoration: none;
 }
 
 img{
@@ -69,7 +88,7 @@ h1{
 
 
 h2{
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: white;
     text-align: center;
 
