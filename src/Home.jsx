@@ -1,5 +1,5 @@
 import React, { isValidElement } from "react";
-import { useState } from "react";
+import { useState , useEffect} from "react";
 import "./Home.css";
 import { FaEnvelopeSquare, FaGithub, FaLinkedin, FaMoon, FaPhone, FaPhoneAlt, FaSearch, FaSpaceShuttle, FaStar, FaVoicemail, IconName } from "react-icons/fa";
 import "./ListPlanet.jsx";
@@ -40,6 +40,8 @@ export default function Home() {
   const [fact, setFact] = useState('The Earth is the only planet in our solar system not named after a god.');
   const [MarsFact, setMarsFact] = useState('Mars is the fourth planet from the sun and the second smallest planet in the solar system.');
   const [JupFact, setJupFact] = useState('Jupiter is the largest planet in our solar system, more than twice the size of all the other planets combined.');
+  
+ 
 
 
   const earthFacts = [
@@ -192,12 +194,22 @@ export default function Home() {
   }
 
 
-  
 
 
   if (ActivePlanet == "")
     return (
+        <div className="container">
+      <img
+        className="background"
+        src=""
+        alt="background"
+      />
+      
+    
+
       <div className="Home">
+
+
         <h1> <FaStar /> ADVENTURES WITH SPACE INVADERS <FaStar />  </h1>
         <h2>Which planet do you want to explore?</h2>
         
@@ -205,9 +217,13 @@ export default function Home() {
         <button onClick={() => setActivePlanet("Mars")}>Mars <FaSpaceShuttle /></button>
         <button onClick={() => setActivePlanet("Jupiter")}>Jupiter <FaSpaceShuttle />  </button>
 
+        
+
         <img src="https://img.freepik.com/free-vector/paper-style-galaxy-background_23-2148985024.jpg" alt="" id="space" />
 
         <div className="Contact" >
+
+            
             <h1>
                 CONTACT 
             </h1>
@@ -220,9 +236,13 @@ export default function Home() {
             <a href="">CALL<FaPhoneAlt/> </a>
 
         </div>
-
+    
       </div>
+      </div>
+
+      
     );
+
   else
     return (
       <div>

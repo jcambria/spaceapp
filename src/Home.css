@@ -15,9 +15,22 @@ body{
     background-color: #443C68;
     cursor: url(icons8-spaceman-64.png), auto;
     scroll-behavior: smooth;
+    background-image: url("https://static.nationalgeographic.co.uk/files/styles/image_3200/public/webbdeepfield.jpg?w=1600&h=900");
+  background-size: cover;
+  background-position: center center;
     
     
 }
+
+
+
+
+
+
+
+
+
+
 
 
 .Home{
