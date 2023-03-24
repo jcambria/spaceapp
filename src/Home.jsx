@@ -121,7 +121,7 @@ export default function Home() {
     if(ShowImg === true && ActivePlanet === ('Mars')){
         return(
             <div>
-                <img src="https://media.hswstatic.com/eyJidWNrZXQiOiJjb250ZW50Lmhzd3N0YXRpYy5jb20iLCJrZXkiOiJnaWZcL21hcnMtYTEuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoyOTB9fX0=" alt="" />
+                <img src="https://media.hswstatic.com/eyJidWNrZXQiOiJjb250ZW50Lmhzd3N0YXRpYy5jb20iLCJrZXkiOiJnaWZcL21hcnMtYTEuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoyOTB9fX0=" alt="space" />
                 <p></p>
             </div>
         )
@@ -132,7 +132,7 @@ export default function Home() {
     if(ShowImg === true && ActivePlanet === ('Earth')){
         return(
             <div>
-                <img src="https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80" alt="" />
+                <img src="https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80" alt="space" />
             </div>
         )
     }
@@ -142,7 +142,7 @@ export default function Home() {
     if(ShowImg === true && ActivePlanet === ('Jupiter')){
         return(
             <div>
-                <img src="https://cdn.britannica.com/84/4284-050-16C7E8C2/Photograph-Jupiter-range-Voyager-1-cloud-bands-February-1-1979.jpg" alt="" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Jupiter%27s_swirling_colourful_clouds.jpg" alt="space" />
             </div>
         )
     }
@@ -198,14 +198,9 @@ export default function Home() {
 
   if (ActivePlanet == "")
     return (
-        <div className="container">
-      <img
-        className="background"
-        src=""
-        alt="background"
-      />
+       
       
-    
+
 
       <div className="Home">
 
@@ -218,8 +213,8 @@ export default function Home() {
         <button onClick={() => setActivePlanet("Jupiter")}>Jupiter <FaSpaceShuttle />  </button>
 
         
-
-        <img src="https://img.freepik.com/free-vector/paper-style-galaxy-background_23-2148985024.jpg" alt="" id="space" />
+        <img src="https://d.newsweek.com/en/full/2096815/astronaut-spaceman-do-spacewalk.jpg" alt="space" />
+        {/* <img src="https://img.freepik.com/free-vector/paper-style-galaxy-background_23-2148985024.jpg" alt="" id="space" /> */}
 
         <div className="Contact" >
 
@@ -238,13 +233,17 @@ export default function Home() {
         </div>
     
       </div>
-      </div>
+     
 
       
     );
 
   else
     return (
+        
+
+
+
       <div>
         <h1>{ActivePlanet}</h1>
         <p>{displayEarthImg()}
@@ -260,6 +259,7 @@ export default function Home() {
 
         <button onClick={() => setActivePlanet("")}>Go back</button>
       </div>
+      
 
     );
 }
