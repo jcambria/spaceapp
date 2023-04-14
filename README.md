@@ -1,2 +1,2 @@
-This is a small web application that is created for educational purposes!
+This is a small web application created for educational purposes! Please checkout "spaceAppNew" for complete code.
 
